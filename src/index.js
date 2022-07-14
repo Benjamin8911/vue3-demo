@@ -3,7 +3,7 @@ import { createPinia } from 'pinia'
 import ElementPlus from 'element-plus'
 import App from './App.vue'
 import router from '@/router/index'
-import './index.less'
+import './index.scss'
 import 'element-plus/dist/index.css'
 
 const pinia = createPinia()

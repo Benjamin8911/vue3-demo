@@ -11,6 +11,6 @@
   width: 100%;
   height: 80px;
   font-size: 20px;
-  background-color: red;
+  background-color: lightslategray;
 }
 </style>

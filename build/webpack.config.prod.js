@@ -24,6 +24,17 @@ module.exports = merge(baseConfig, {
           }
         }, 'less-loader']
       },
+      {
+        test: /\.s[ac]ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: ['autoprefixer', 'postcss-preset-env']
+            }
+          }
+        }, 'sass-loader']
+      }
     ]
   },
   plugins: [

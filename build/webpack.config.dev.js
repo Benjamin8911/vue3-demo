@@ -22,6 +22,12 @@ module.exports = merge(baseConfig, {
       {
         test: /\.less$/,
         use: ['style-loader', 'css-loader', 'less-loader']
+      },
+      {
+        test: /\.s[ac]ss$/,
+        use: ['style-loader', 'css-loader', {
+          loader: 'sass-loader'
+        }]
       }
     ]
   },
