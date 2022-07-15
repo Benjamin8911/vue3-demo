@@ -12,10 +12,11 @@ import { toRefs, defineProps, defineEmits } from 'vue'
 const props = defineProps({
   title: String
 })
+// const {title} = toRefs(props)
 const emit = defineEmits(['show'])
 const show = () => {
   emit('show', 'some thing pass to father')
-}
+};
 
 </script>
 <style lang="less" scoped>

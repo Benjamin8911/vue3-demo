@@ -21,10 +21,9 @@
 // If want to use destructuring
 // use storeToRefs wrap the store from pinia to keep its reactivity
 import { ref, reactive } from 'vue'
-import {useCounterStore, useUsersStore} from '@/store/index'
+import { useCounterStore } from '@/store/index'
 import { ElMessage } from 'element-plus'
 const counterStore = useCounterStore()
-const usersStore = useUsersStore()
 const name = ref("I'm Benjamin a front end web developer")
 const list = reactive([{name: 'Ben', age: 32}])
 const addPerson = () => {

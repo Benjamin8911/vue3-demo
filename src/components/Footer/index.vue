@@ -1,8 +1,14 @@
 <template>
   <div class="footer">
-    Footer, I'm footer!
+    <span>data from Provider:{{message}}</span>
+    <el-button @click="changeMsg">ChangMsg</el-button>
   </div>
 </template>
+<script setup>
+import { inject } from 'vue'
+const message = inject('message')
+const changeMsg = inject('changeMsg');
+</script>
 <style lang="less" scoped>
 .footer {
   position: fixed;
