@@ -10,54 +10,54 @@
     <p>data from vue instance data：{{name}}</p>
     <el-button type="primary" @click="showLower">Show Lowercase</el-button>
     <el-button type="primary" @click="showUpper">Show Uppercase</el-button>
+    <h4>Info</h4>
+    <el-button @click="addPerson">add person</el-button>
+    <ul>
+      <li :key="item.name" v-for="item in list">Name:{{item.name}}-Age:{{item.age}}</li>
+    </ul>
   </div>
 </template>
-<script>
+<script setup>
 // If want to use destructuring
 // use storeToRefs wrap the store from pinia to keep its reactivity
+import { ref, reactive } from 'vue'
 import {useCounterStore, useUsersStore} from '@/store/index'
 import { ElMessage } from 'element-plus'
-export default {
-  setup() {
-    const counterStore = useCounterStore()
-    const usersStore = useUsersStore()
-    const change = () => {
-      counterStore.increment()
-    }
-    const delayChange = () => {
-      counterStore.delayIncrease()
-    }
-    return {counterStore, usersStore, change, delayChange}
-  },
-  data() {
-    return {
-      name: "I'm Benjamin a front end web developer."
-    }
-  },
-  methods: {
-    incrementAndPrint() {
-      this.counterStore.increment()
-      ElMessage({
-        message: 'through methods to increase count',
-        type: 'success'
-      })
-    },
-    showLower() {
-      this.name = this.name.toLowerCase()
-      ElMessage({
-        message: 'Lowercase success',
-        type: 'success'
-      })
-    },
-    showUpper() {
-      this.name = this.name.toUpperCase()
-      ElMessage({
-        message: 'Uppercase success',
-        type: 'success'
-      })
-    }
-  }
+const counterStore = useCounterStore()
+const usersStore = useUsersStore()
+const name = ref("I'm Benjamin a front end web developer")
+const list = reactive([{name: 'Ben', age: 32}])
+const addPerson = () => {
+  // list is read only here we can use list.value
+  list.value = list.push({name: 'XXX', age: 100})
 }
+const change = () => {
+  counterStore.increment()
+}
+const delayChange = () => {
+  counterStore.delayIncrease()
+}
+const incrementAndPrint = () => {
+  counterStore.increment()
+  ElMessage({
+    message: 'through methods to increase count',
+    type: 'success'
+  })
+}
+const showLower = () => {
+  name.value = name.value.toLowerCase()
+  ElMessage({
+    message: 'Lowercase success',
+    type: 'success'
+  })
+}
+const showUpper = () => {
+  name.value = name.value.toUpperCase()
+  ElMessage({
+    message: 'Uppercase success',
+    type: 'success'
+  })
+};
 </script>
 <style lang="less" scoped>
 .home {

@@ -17,7 +17,7 @@
   import {ref} from 'vue'
   import {useUsersStore} from '@/store/index'
   import { ElMessage } from 'element-plus'
-  import { useRouter } from 'vue-router';
+  import { useRouter } from 'vue-router'
   const router = useRouter()
   const userStore = useUsersStore()
   const username = ref('')
@@ -31,7 +31,7 @@
         message: 'login fault'
       })
     })
-  }
+  };
 </script>
 <style lang="sass">
 .login {

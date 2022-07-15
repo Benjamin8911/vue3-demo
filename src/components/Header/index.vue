@@ -1,11 +1,23 @@
 <template>
   <div class="header">
+    <span @click="show">{{title? title : 'Logo'}}</span>
     <router-link to="/home">Home</router-link>&nbsp;
     <router-link to="/about">About</router-link>&nbsp;
     <router-link to="/contact">Contact</router-link>&nbsp;
     <router-link to="/demo">Demo</router-link>
   </div>
 </template>
+<script setup>
+import { toRefs, defineProps, defineEmits } from 'vue'
+const props = defineProps({
+  title: String
+})
+const emit = defineEmits(['show'])
+const show = () => {
+  emit('show', 'some thing pass to father')
+}
+
+</script>
 <style lang="less" scoped>
 .header {
   /* css note */
