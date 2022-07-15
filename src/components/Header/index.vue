@@ -19,7 +19,7 @@ const show = () => {
 };
 
 </script>
-<style lang="less" scoped>
+<style lang="sass" scoped>
 .header {
   /* css note */
   position: fixed;

@@ -7,13 +7,15 @@
     <h1 class="text">ocean</h1>
   </div>
 </template>
-<style>
+<style lang="scss" scoped>
 .demo4 {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.video, .text {
+
+.video,
+.text {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,11 +28,11 @@
 }
 
 .text {
-  line-height: 80vh;
   font-size: 20vw;
   font-weight: bold;
-  text-transform: uppercase;
+  line-height: 80vh;
   text-align: center;
+  text-transform: uppercase;
   background: #fff;
   mix-blend-mode: screen;
 }

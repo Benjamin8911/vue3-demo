@@ -10,10 +10,12 @@
     </div>
   </div>
 </template>
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 .loading {
   display: flex;
+
   $color: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
+
   .dot {
     position: relative;
     width: 20px;
@@ -25,9 +27,9 @@
       position: absolute;
       top: 0;
       left: 0;
-      content: "";
       width: 100%;
       height: 100%;
+      content: "";
       background: inherit;
       border-radius: inherit;
       animation: wave 2s ease-out infinite;
@@ -35,21 +37,25 @@
 
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        background: nth($color, $i);
+        background: list.nth($color, $i);
 
-        &::before{
-          animation-delay: $i * 0.2s; 
+        &::before {
+          animation-delay: $i * 0.2s;
         }
       }
     }
   }
 }
-  @keyframes wave {
-    50%,75% {
-      transform: scale(2.5);
-    }
-    80%,100% {
-      opacity: 0;
-    }
+
+@keyframes wave {
+  50%,
+  75% {
+    transform: scale(2.5);
   }
+
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
 </style>

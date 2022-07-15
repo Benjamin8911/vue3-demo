@@ -9,7 +9,7 @@ export default {
   
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .contact {
   padding: 80px 0;
 }

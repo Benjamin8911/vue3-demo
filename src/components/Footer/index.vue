@@ -9,7 +9,7 @@ import { inject } from 'vue'
 const message = inject('message')
 const changeMsg = inject('changeMsg');
 </script>
-<style lang="less" scoped>
+<style lang="sass" scoped>
 .footer {
   position: fixed;
   bottom: 0;

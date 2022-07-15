@@ -4,7 +4,7 @@
     <p>About content</p>
   </div>
 </template>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .about {
   padding: 80px 0;
 }

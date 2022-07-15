@@ -21,5 +21,5 @@ const show = (params) => {
     message: `get the payload: ${params}`,
     type: 'success'
   })
-}
+};
 </script>

@@ -33,13 +33,13 @@
     })
   };
 </script>
-<style lang="sass">
+<style lang="scss">
 .login {
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: lightskyblue;
-  
+
   .login-box {
     position: absolute;
     top: 50%;
@@ -52,12 +52,12 @@
 
     h4 {
       margin-bottom: 8px;
-      line-height: 24px;
       font-size: 24px;
+      line-height: 24px;
     }
 
     .el-input {
-      margin-bottom: 8px;  
+      margin-bottom: 8px;
     }
 
     button {

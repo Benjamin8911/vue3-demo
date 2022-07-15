@@ -58,13 +58,13 @@ const showUpper = () => {
   })
 };
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .home {
   height: 100vh;
   padding: 80px 0;
   font-size: 40px;
   color: #fff;
-  background: url('@/assets/img/123.jpeg') no-repeat left top;
+  background: url("@/assets/img/123.jpeg") no-repeat left top;
   background-size: cover;
 }
 </style>
