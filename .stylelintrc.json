@@ -11,8 +11,9 @@
     {
       "files": ["**/*.vue"],
       "rules": {
-        "unit-no-unknown": null,
-        "no-descending-specificity": null
+        "unit-no-unknown": true,
+        "no-descending-specificity": null,
+        "selector-class-pattern": null
       }
     }
   ]

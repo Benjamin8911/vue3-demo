@@ -1,10 +1,10 @@
 <template>
   <div class="demo">
     <ul class="demo-menu">
-      <li class="demo-menulink"><router-link to="/demo/demo1">Demo1</router-link></li>
-      <li class="demo-menulink"><router-link to="/demo/demo2">Demo2</router-link></li>
-      <li class="demo-menulink"><router-link to="/demo/demo3">Demo3</router-link></li>
-      <li class="demo-menulink"><router-link to="/demo/demo4">Demo4</router-link></li>
+      <li class="demo-menu__link"><router-link to="/demo/demo1">Demo1</router-link></li>
+      <li class="demo-menu__link"><router-link to="/demo/demo2">Demo2</router-link></li>
+      <li class="demo-menu__link"><router-link to="/demo/demo3">Demo3</router-link></li>
+      <li class="demo-menu__link"><router-link to="/demo/demo4">Demo4</router-link></li>
     </ul>
     <div class="demo-route">
       <router-view></router-view>
@@ -24,7 +24,7 @@
     background-color: lightseagreen;
   }
 
-  .demo-menulink {
+  .demo-menu__link {
     padding: 0 20px;
     font-size: 20px;
   }
