@@ -92,6 +92,8 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@use "sass:math";
+
 .demo2 {
   width: 100%;
   height: 100%;

@@ -11,6 +11,8 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@use "sass:list";
+
 .loading {
   display: flex;
 
