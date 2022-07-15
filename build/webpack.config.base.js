@@ -42,13 +42,6 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        // use: {
-        //   loader: 'url-loader',
-        //   options: {
-        //     limit: 10000,
-        //     name: '[name].[ext]?[hash:8]'
-        //   }
-        // }
         type: 'asset',
         generator: {
           filename: 'images/[hash].[ext]'

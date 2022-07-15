@@ -8,7 +8,7 @@
   </div>
 </template>
 <script setup>
-import { toRefs, defineProps, defineEmits } from 'vue'
+import { toRefs } from 'vue'
 const props = defineProps({
   title: String
 })

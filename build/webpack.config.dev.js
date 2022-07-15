@@ -9,13 +9,9 @@ module.exports = merge(baseConfig, {
   mode: 'development',
   devtool: 'eval-cheap-source-map',
   devServer: {
-    // static: {
-    //   directory: path.join(__dirname, './dist')
-    // },
     compress: true,
     port: 4000,
-    open:true,
-    hot: true
+    open:true
   },
   module:{
     rules: [
