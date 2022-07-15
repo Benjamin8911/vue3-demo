@@ -2,31 +2,47 @@
   <div class="home">
     <h1>Home</h1>
     <p>Home Content</p>
-    <p>data from store:{{counter.count}}</p>
+    <p>data from store-count:{{counterStore.count}}</p>
+    <p>data from store-double count:{{counterStore.double}}</p>
     <el-button type="danger" @click="change">add</el-button>
+    <el-button type="danger" @click="delayChange">delay 2s add</el-button>
+    <el-button type="danger" @click="incrementAndPrint">component methods add</el-button>
     <p>data from vue instance data：{{name}}</p>
     <el-button type="primary" @click="showLower">Show Lowercase</el-button>
     <el-button type="primary" @click="showUpper">Show Uppercase</el-button>
   </div>
 </template>
 <script>
-import {useCounterStore} from '@/store/index'
+// If want to use destructuring
+// use storeToRefs wrap the store from pinia to keep its reactivity
+import {useCounterStore, useUsersStore} from '@/store/index'
 import { ElMessage } from 'element-plus'
 export default {
   setup() {
-    const counter = useCounterStore()
-    
+    const counterStore = useCounterStore()
+    const usersStore = useUsersStore()
     const change = () => {
-      counter.increment()
+      counterStore.increment()
     }
-    return {counter, change}
+    const delayChange = () => {
+      counterStore.delayIncrease()
+    }
+    console.log(usersStore.isLogin)
+    return {counterStore, usersStore, change, delayChange}
   },
   data() {
     return {
-      name: 'Benjamin'
+      name: "I'm Benjamin a front end web developer."
     }
   },
   methods: {
+    incrementAndPrint() {
+      this.counterStore.increment()
+      ElMessage({
+        message: 'through methods to increase count',
+        type: 'success'
+      })
+    },
     showLower() {
       this.name = this.name.toLowerCase()
       ElMessage({
