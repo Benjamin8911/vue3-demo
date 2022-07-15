@@ -7,7 +7,7 @@ const path = require('path')
 
 module.exports = merge(baseConfig, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'eval-cheap-source-map',
   devServer: {
     // static: {
     //   directory: path.join(__dirname, './dist')

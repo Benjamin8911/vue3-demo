@@ -46,6 +46,7 @@ const routes = [
         children: [
           {
             path: '',
+            name: 'Demo1',
             component: Demo1
           },
           {
@@ -76,10 +77,14 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to,from,next) => {
-  const usersStore = useUsersStore()
-  if(to.path === '/login') return next()
-  if(!window.localStorage.getItem('isLogin')) return next('/login')
-  return next()
+  // const usersStore = useUsersStore()
+  if(to.path === '/login'){
+    return next()
+  }
+  if(!window.localStorage.getItem('isLogin')){
+    return next({path: '/login'})
+  }
+  next()
 })
 
 export default router

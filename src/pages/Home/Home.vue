@@ -27,7 +27,6 @@ export default {
     const delayChange = () => {
       counterStore.delayIncrease()
     }
-    console.log(usersStore.isLogin)
     return {counterStore, usersStore, change, delayChange}
   },
   data() {
