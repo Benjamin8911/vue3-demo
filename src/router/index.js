@@ -1,69 +1,63 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
-import Login from '@/pages/Login/Login.vue'
-import Layout from '@/pages/Layout/Layout.vue'
-import Home from '../pages/Home/Home.vue'
-import About from '../pages/About/About.vue'
-import Contact from '../pages/Contact/Contact.vue'
-import Demo from '../pages/Demo/Demo.vue'
-import Demo1 from '@/pages/Demo/Demo1/Demo1.vue'
-import Demo2 from '@/pages/Demo/Demo2/Demo2.vue'
-import Demo3 from '@/pages/Demo/Demo3/Demo3.vue'
-import Demo4 from '@/pages/Demo/Demo4/Demo4.vue'
 import {useUsersStore} from '@/store/index'
+
+const loadRoute = (dir, route) => {
+  return () => import(`@/pages/${dir}/${route}.vue`)
+}
 
 const routes = [
   {
     path: '/',
     redirect: '/login',
-    component: Login
+    component: loadRoute('Login', 'Login')
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: loadRoute('Login', 'Login')
   },
   {
     path: '/home',
-    component: Layout,
+    component: loadRoute('Layout', 'Layout'),
     children: [
       {
         path: '',
-        component: Home
+        component: loadRoute('Home', 'Home')
       },
       {
         path: '/about',
-        component: About
+        component: loadRoute('About', 'About')
       },
       {
         path: '/contact',
         name: 'Contact',
-        component: Contact
+        component: loadRoute('Contact', 'Contact')
       },
       {
         path: '/demo',
         name: 'Demo',
-        component: Demo,
+        component: loadRoute('Demo', 'Demo'),
         children: [
           {
             path: '',
             name: 'Demo1',
-            component: Demo1
+            component: loadRoute('Demo/Demo1', 'Demo1')
           },
           {
             path: 'demo1',
-            component: Demo1
+            component: loadRoute('Demo/Demo1', 'Demo1')
           },
           {
             path: 'demo2',
-            component: Demo2
+            component: loadRoute('Demo/Demo2', 'Demo2')
           },
           {
             path: 'demo3',
-            component: Demo3
+            component: loadRoute('Demo/Demo3', 'Demo3')
           },
           {
             path: 'demo4',
-            component: Demo4
+            component: loadRoute('Demo/Demo4', 'Demo4')
           }
         ]
       }
