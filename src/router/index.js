@@ -21,7 +21,7 @@ const routes = [
     component: loadRoute('Layout', 'Layout'),
     children: [
       {
-        path: '',
+        path: '/home',
         component: loadRoute('Home', 'Home')
       },
       {
@@ -36,13 +36,9 @@ const routes = [
       {
         path: '/demo',
         name: 'Demo',
+        redirect: '/demo/demo1',
         component: loadRoute('Demo', 'Demo'),
         children: [
-          {
-            path: '',
-            name: 'Demo1',
-            component: loadRoute('Demo/Demo1', 'Demo1')
-          },
           {
             path: 'demo1',
             component: loadRoute('Demo/Demo1', 'Demo1')
